@@ -1211,10 +1211,49 @@
         <circle cx="176" cy="262" r="15" fill="#fff" stroke="#0f1b36" stroke-width="3"/>
         <path d="M176 255l7 5-3 8h-8l-3-8z" fill="#0f1b36"/>
       </symbol>
-      <symbol id="cam" viewBox="0 0 200 200">
-        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="var(--sc, #1a5ccf)" stroke="#0f1b36" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M76 20q24 24 48 0" fill="none" stroke="var(--st, #f6d70c)" stroke-width="6" stroke-linecap="round"/>
-        <text x="100" y="112" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="30" fill="var(--st, #f6d70c)">SCP</text>
+      <symbol id="cam1" viewBox="0 0 200 200">
+        <defs><clipPath id="cam1c"><path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z"/></clipPath></defs>
+        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="#ffffff"/>
+        <g clip-path="url(#cam1c)" fill="#f6d70c">
+          <g stroke="none">
+            <path d="M8 38l26 52-8 4-26-52z"/><path d="M26 28l26 52-8 4-26-52z"/>
+            <path d="M192 38l-26 52 8 4 26-52z"/><path d="M174 28l-26 52 8 4 26-52z"/>
+            <path d="M6 48l28 56-10 5-28-56z"/><path d="M194 48l-28 56 10 5 28-56z"/>
+          </g>
+          <path d="M56 78h26L56 148z"/><path d="M144 78h-26l26 70z"/>
+          <path d="M56 154l20-22v14L56 170z"/><path d="M144 154l-20-22v14l20 24z"/>
+          <path d="M60 20L14 46" fill="none" stroke="#f6d70c" stroke-width="7"/>
+          <path d="M140 20l46 26" fill="none" stroke="#f6d70c" stroke-width="7"/>
+          <rect x="0" y="166" width="200" height="16"/>
+          <rect x="0" y="160" width="200" height="3" fill="#1a5ccf"/>
+          <path d="M92 150l8-10 8 10z" opacity="0"/>
+        </g>
+        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="none" stroke="#0f1b36" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M72 18q28 30 56 0l-6-6q-22 20-44 0z" fill="#1a5ccf" stroke="#0f1b36" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M80 18q20 22 40 0" fill="none" stroke="#f6d70c" stroke-width="3"/>
+        <image href="escudo.png" x="78" y="62" width="44" height="44" preserveAspectRatio="xMidYMid meet"/>
+      </symbol>
+      <symbol id="cam2" viewBox="0 0 200 200">
+        <defs><clipPath id="cam2c"><path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z"/></clipPath></defs>
+        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="#1a5ccf"/>
+        <g clip-path="url(#cam2c)" fill="#f6d70c">
+          <g stroke="none">
+            <path d="M8 38l26 52-8 4-26-52z"/><path d="M26 28l26 52-8 4-26-52z"/>
+            <path d="M192 38l-26 52 8 4 26-52z"/><path d="M174 28l-26 52 8 4 26-52z"/>
+            <path d="M6 48l28 56-10 5-28-56z"/><path d="M194 48l-28 56 10 5 28-56z"/>
+          </g>
+          <path d="M56 78h26L56 148z"/><path d="M144 78h-26l26 70z"/>
+          <path d="M56 154l20-22v14L56 170z"/><path d="M144 154l-20-22v14l20 24z"/>
+          <path d="M60 20L14 46" fill="none" stroke="#f6d70c" stroke-width="7"/>
+          <path d="M140 20l46 26" fill="none" stroke="#f6d70c" stroke-width="7"/>
+          <rect x="0" y="166" width="200" height="16"/>
+          <rect x="0" y="160" width="200" height="3" fill="#ffffff"/>
+          <path d="M92 150l8-10 8 10z" opacity="0"/>
+        </g>
+        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="none" stroke="#0f1b36" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M72 18q28 30 56 0l-6-6q-22 20-44 0z" fill="#f6d70c" stroke="#0f1b36" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M80 18q20 22 40 0" fill="none" stroke="#f6d70c" stroke-width="3"/>
+        <image href="escudo.png" x="78" y="62" width="44" height="44" preserveAspectRatio="xMidYMid meet"/>
       </symbol>
     </defs>
   </svg>
@@ -1538,9 +1577,9 @@
         <div class="shop">
           <article class="shirt">
             <div class="shirt-art">
-              <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 1 do Paulistano (imagem ilustrativa)" style="--sc:#1a5ccf;--st:#f6d70c"><use href="#cam"/></svg>
+              <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 1 (branca) do Paulistano (imagem ilustrativa)"><use href="#cam1"/></svg>
             </div>
-            <h3>Camisa 1</h3>
+            <h3>Camisa 1 · Branca</h3>
             <div class="price">R$ 50</div>
             <label for="t1">
               Tamanho
@@ -1548,14 +1587,14 @@
                 <option>P</option><option selected>M</option><option>G</option><option>GG</option>
               </select>
             </label>
-            <button class="btn buy-shirt" type="button" data-shirt="Camisa 1" data-size="t1">Quero esta camisa</button>
+            <button class="btn buy-shirt" type="button" data-shirt="Camisa 1 (branca)" data-size="t1">Quero esta camisa</button>
           </article>
 
           <article class="shirt">
             <div class="shirt-art">
-              <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 2 do Paulistano (imagem ilustrativa)" style="--sc:#f6d70c;--st:#1a5ccf"><use href="#cam"/></svg>
+              <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 2 (azul) do Paulistano (imagem ilustrativa)"><use href="#cam2"/></svg>
             </div>
-            <h3>Camisa 2</h3>
+            <h3>Camisa 2 · Azul</h3>
             <div class="price">R$ 50</div>
             <label for="t2">
               Tamanho
@@ -1563,7 +1602,7 @@
                 <option>P</option><option selected>M</option><option>G</option><option>GG</option>
               </select>
             </label>
-            <button class="btn buy-shirt" type="button" data-shirt="Camisa 2" data-size="t2">Quero esta camisa</button>
+            <button class="btn buy-shirt" type="button" data-shirt="Camisa 2 (azul)" data-size="t2">Quero esta camisa</button>
           </article>
         </div>
 
@@ -1579,7 +1618,7 @@
           <div>
             <span class="sec-tag">Central do Torcedor</span>
             <h2>Faça parte do Paulistano</h2>
-            <p class="lead">Apoie de forma avulsa via Pix ou conclua sua adesão como sócio oficial pelo WhatsApp do clube.</p>
+            <p class="lead">Apoie de forma avulsa via Pix ou faça seu cadastro como sócio oficial do clube.</p>
           </div>
         </div>
 
@@ -1604,7 +1643,7 @@
           <div class="panel-card" id="socio">
             <span class="sec-tag">Adesão Oficial</span>
             <h3>Cadastro de Sócio</h3>
-            <p style="color:var(--mut);margin:8px 0 0">Preencha seus dados abaixo e enviaremos sua ficha diretamente para o atendimento do clube.</p>
+            <p style="color:var(--mut);margin:8px 0 0">Preencha seus dados abaixo e seu cadastro é registrado na hora. Depois, é só fazer o Pix do plano escolhido.</p>
 
             <form class="socio-form" id="f" novalidate>
               <label for="n">
@@ -1626,7 +1665,8 @@
                 </select>
               </label>
 
-              <button class="btn" type="submit">Enviar cadastro pelo WhatsApp</button>
+              <input type="text" id="site" name="site" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+              <button class="btn" type="submit" id="sendBtn">Enviar cadastro</button>
               <p class="status-msg" id="formMsg" role="status" aria-live="polite"></p>
             </form>
           </div>
@@ -1655,7 +1695,7 @@
           </details>
           <details>
             <summary>Como pago minha mensalidade?</summary>
-            <p>Por Pix, usando a chave oficial desta página. Após enviar o cadastro, a equipe do clube confirma tudo com você pelo WhatsApp.</p>
+            <p>Por Pix, usando a chave oficial desta página. Depois de enviar o cadastro, faça o Pix do valor do seu plano. O clube confere os pagamentos e confirma a sua adesão.</p>
           </details>
           <details>
             <summary>Como compro uma camisa?</summary>
@@ -1699,7 +1739,7 @@
         <h4>Atendimento</h4>
         <ul class="footer-links">
           <li><a href="#pix">Chave Pix Oficial</a></li>
-          <li><a href="#socio">Cadastro via WhatsApp</a></li>
+          <li><a href="#socio">Cadastro de Sócio</a></li>
           <li><a href="#faq">Perguntas Frequentes</a></li>
         </ul>
       </div>
@@ -1913,20 +1953,44 @@
             return;
           }
 
+          var honey = document.getElementById("site");
+          if (honey && honey.value) { return; }
+
+          var sendBtn = document.getElementById("sendBtn");
+          var precos = { "Torcedor": "R$ 15", "Sócio": "R$ 30", "Sócio Fundador": "R$ 80" };
+          var valor = precos[plano] || "";
+
+          if (sendBtn) { sendBtn.disabled = true; }
           if (formMsg) {
             formMsg.classList.remove("error");
-            formMsg.textContent = "Abrindo o WhatsApp oficial do clube com seus dados...";
+            formMsg.textContent = "Enviando seu cadastro...";
           }
 
-          // Troque pelo WhatsApp oficial do clube (55 + DDD + número)
-          var whatsappNumber = "5581997475173";
-          var mensagem = "Olá! Quero ser sócio do Sport Club Paulistano.\n" +
-            "Nome: " + nome + "\n" +
-            "Cidade: " + cidade + "\n" +
-            "Plano: " + plano;
+          var dados = new URLSearchParams();
+          dados.append("entry.1818818436", nome);
+          dados.append("entry.1461335199", cidade);
+          dados.append("entry.236522860", plano);
 
-          var url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(mensagem);
-          window.open(url, "_blank", "noopener,noreferrer");
+          fetch("https://docs.google.com/forms/d/e/1FAIpQLSeuz4LJReqMUrJRIB0YY7S3O3VmAHapkrPhl7Mn-4MLBQtLYA/formResponse", {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: dados.toString()
+          }).then(function () {
+            if (formMsg) {
+              formMsg.classList.remove("error");
+              formMsg.textContent = "✓ Cadastro enviado, " + nome.split(" ")[0] + "! Para concluir, faça o Pix de " + valor + "/mês com a chave Pix desta seção.";
+            }
+            form.reset();
+            if (planSelect) { planSelect.value = plano; }
+          }).catch(function () {
+            if (formMsg) {
+              formMsg.classList.add("error");
+              formMsg.textContent = "Não foi possível enviar agora. Confira sua internet e tente de novo.";
+            }
+          }).then(function () {
+            if (sendBtn) { sendBtn.disabled = false; }
+          });
         });
       }
     })();
