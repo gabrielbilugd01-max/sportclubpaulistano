@@ -9,21 +9,21 @@
   <title>Sport Club Paulistano — Site Oficial | O campo é a cidade</title>
   <link id="favicon" rel="icon" type="image/png" href="escudo.png">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://sportclubpaulistano.pages.dev/">
+  <link rel="canonical" href="https://sportclubpaulistano.gabriel-bilugd01.workers.dev/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Sport Club Paulistano">
   <meta property="og:title" content="Sport Club Paulistano — Site Oficial | O campo é a cidade">
   <meta property="og:description" content="Jogos abertos com entrada gratuita em campos públicos. Seja sócio e ajude a construir nossa casa própria.">
-  <meta property="og:url" content="https://sportclubpaulistano.pages.dev/">
-  <meta property="og:image" content="https://sportclubpaulistano.pages.dev/escudo.png">
+  <meta property="og:url" content="https://sportclubpaulistano.gabriel-bilugd01.workers.dev/">
+  <meta property="og:image" content="https://sportclubpaulistano.gabriel-bilugd01.workers.dev/escudo.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Sport Club Paulistano — Site Oficial">
   <meta name="twitter:description" content="Jogos abertos com entrada gratuita em campos públicos. Seja sócio e ajude a construir nossa casa própria.">
-  <meta name="twitter:image" content="https://sportclubpaulistano.pages.dev/escudo.png">
+  <meta name="twitter:image" content="https://sportclubpaulistano.gabriel-bilugd01.workers.dev/escudo.png">
   <link rel="apple-touch-icon" href="escudo.png">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"SportsOrganization","name":"Sport Club Paulistano","sport":"Futebol","url":"https://sportclubpaulistano.pages.dev/","logo":"https://sportclubpaulistano.pages.dev/escudo.png","slogan":"O campo é a cidade.","description":"Futebol comunitário, aberto e transparente. Jogos com entrada gratuita em campos públicos."}
+  {"@context":"https://schema.org","@type":"SportsOrganization","name":"Sport Club Paulistano","sport":"Futebol","url":"https://sportclubpaulistano.gabriel-bilugd01.workers.dev/","logo":"https://sportclubpaulistano.gabriel-bilugd01.workers.dev/escudo.png","slogan":"O campo é a cidade.","description":"Futebol comunitário, aberto e transparente. Jogos com entrada gratuita em campos públicos."}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1043,6 +1043,18 @@
       outline: none;
     }
 
+
+    /* Loja de Camisas */
+    .shop { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+    .shirt { background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px; }
+    .shirt-art { background: var(--bg-alt); border-radius: 12px; padding: 10px; }
+    .shirt-art svg { width: 100%; max-width: 200px; margin: 0 auto; display: block; }
+    .shirt h3 { font-size: 1.45rem; }
+    .shirt .price { margin: 0; font-size: 2.2rem; }
+    .shirt select { width: 100%; }
+    .shop-note { margin-top: 22px; color: var(--mut); font-size: 0.95rem; }
+    .shop-note strong { color: var(--fg); }
+
     /* FAQ */
     .faq-list {
       max-width: 780px;
@@ -1199,6 +1211,11 @@
         <circle cx="176" cy="262" r="15" fill="#fff" stroke="#0f1b36" stroke-width="3"/>
         <path d="M176 255l7 5-3 8h-8l-3-8z" fill="#0f1b36"/>
       </symbol>
+      <symbol id="cam" viewBox="0 0 200 200">
+        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="var(--sc, #1a5ccf)" stroke="#0f1b36" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M76 20q24 24 48 0" fill="none" stroke="var(--st, #f6d70c)" stroke-width="6" stroke-linecap="round"/>
+        <text x="100" y="112" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="30" fill="var(--st, #f6d70c)">SCP</text>
+      </symbol>
     </defs>
   </svg>
 
@@ -1239,6 +1256,7 @@
           <a href="#chamine">O Mascote</a>
           <a href="#caminho">Casa Própria</a>
           <a href="#planos">Planos</a>
+          <a href="#loja">Loja</a>
           <a href="#apoio">Pix</a>
           <a href="#faq">Dúvidas</a>
           <a class="btn y sm" href="#apoio">Seja sócio</a>
@@ -1324,11 +1342,6 @@
             <h2>Próximos jogos</h2>
             <p class="lead">Todos em campos públicos, sem cobrança de ingresso. Chegue cedo e leve a bandeira.</p>
           </div>
-          <div class="filter-bar" role="group" aria-label="Filtrar jogos por mando de campo">
-            <button class="filter-btn active" aria-pressed="true" type="button" data-filter="all">Todos (3)</button>
-            <button class="filter-btn" aria-pressed="false" type="button" data-filter="casa">Mandante</button>
-            <button class="filter-btn" aria-pressed="false" type="button" data-filter="fora">Visitante</button>
-          </div>
         </div>
 
         <div class="games" id="gamesGrid">
@@ -1352,22 +1365,22 @@
             </div>
           </article>
 
-          <article class="game" data-type="fora">
+          <article class="game" data-type="casa">
             <div class="d">
               <span class="an">28 NOV</span>
-              <span class="comp">Sáb · 15h · Visitante</span>
+              <span class="comp">Sáb · 15h · Mandante</span>
             </div>
             <div class="b">
               <div>
                 <div class="game-matchup">
-                  <span class="crest-mini">ADV</span>
-                  <span>Adversário B x Paulistano</span>
+                  <span class="crest-mini">SCP</span>
+                  <span>Paulistano x A confirmar</span>
                 </div>
                 <span class="game-loc">📍 Praça de Esportes</span>
               </div>
               <div class="game-foot">
                 <span class="tag">Entrada gratuita</span>
-                <button class="share-game" type="button" data-match="Adversário B x Paulistano — 28 NOV, Sáb às 15h na Praça de Esportes">Convidar torcida ↗</button>
+                <button class="share-game" type="button" data-match="Paulistano x A confirmar — 28 NOV, Sáb às 15h na Praça de Esportes">Convidar torcida ↗</button>
               </div>
             </div>
           </article>
@@ -1381,13 +1394,13 @@
               <div>
                 <div class="game-matchup">
                   <span class="crest-mini">SCP</span>
-                  <span>Paulistano x Adversário C</span>
+                  <span>Paulistano x A confirmar</span>
                 </div>
                 <span class="game-loc">📍 Parque Central</span>
               </div>
               <div class="game-foot">
                 <span class="tag">Entrada gratuita</span>
-                <button class="share-game" type="button" data-match="Paulistano x Adversário C — 05 DEZ, Sáb às 16h no Parque Central">Convidar torcida ↗</button>
+                <button class="share-game" type="button" data-match="Paulistano x A confirmar — 05 DEZ, Sáb às 16h no Parque Central">Convidar torcida ↗</button>
               </div>
             </div>
           </article>
@@ -1511,6 +1524,54 @@
       </div>
     </section>
 
+    <!-- Loja de Camisas -->
+    <section id="loja">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="sec-tag">Loja Oficial</span>
+            <h2>Camisas do Paulistano</h2>
+            <p class="lead">Vista o clube. Cada camisa custa R$ 50 e ajuda a manter o time em campo.</p>
+          </div>
+        </div>
+
+        <div class="shop">
+          <article class="shirt">
+            <div class="shirt-art">
+              <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 1 do Paulistano (imagem ilustrativa)" style="--sc:#1a5ccf;--st:#f6d70c"><use href="#cam"/></svg>
+            </div>
+            <h3>Camisa 1</h3>
+            <div class="price">R$ 50</div>
+            <label for="t1">
+              Tamanho
+              <select id="t1">
+                <option>P</option><option selected>M</option><option>G</option><option>GG</option>
+              </select>
+            </label>
+            <button class="btn buy-shirt" type="button" data-shirt="Camisa 1" data-size="t1">Quero esta camisa</button>
+          </article>
+
+          <article class="shirt">
+            <div class="shirt-art">
+              <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 2 do Paulistano (imagem ilustrativa)" style="--sc:#f6d70c;--st:#1a5ccf"><use href="#cam"/></svg>
+            </div>
+            <h3>Camisa 2</h3>
+            <div class="price">R$ 50</div>
+            <label for="t2">
+              Tamanho
+              <select id="t2">
+                <option>P</option><option selected>M</option><option>G</option><option>GG</option>
+              </select>
+            </label>
+            <button class="btn buy-shirt" type="button" data-shirt="Camisa 2" data-size="t2">Quero esta camisa</button>
+          </article>
+        </div>
+
+        <p class="shop-note"><strong>Sem entrega.</strong> Você faz o pedido pelo WhatsApp, paga por Pix e retira a camisa nos jogos. Imagens ilustrativas.</p>
+        <p class="status-msg" id="shopMsg" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
     <!-- Central de Apoio: Pix + Cadastro Oficial -->
     <section id="apoio">
       <div class="wrap">
@@ -1531,8 +1592,8 @@
 
             <div class="pixbox">
               <div>
-                <div style="font-size:0.85rem;opacity:0.9">Chave Pix (CPF/Celular)</div>
-                <div class="pixkey" id="pk">13695122447</div>
+                <div style="font-size:0.85rem;opacity:0.9">Chave Pix (Celular)</div>
+                <div class="pixkey" id="pk">81995925511</div>
               </div>
               <button class="btn y sm" id="cp" type="button">Copiar chave</button>
             </div>
@@ -1597,6 +1658,10 @@
             <p>Por Pix, usando a chave oficial desta página. Após enviar o cadastro, a equipe do clube confirma tudo com você pelo WhatsApp.</p>
           </details>
           <details>
+            <summary>Como compro uma camisa?</summary>
+            <p>Escolha o tamanho na loja e envie o pedido pelo WhatsApp. Cada camisa custa R$ 50, o pagamento é por Pix e não há entrega: você retira nos jogos.</p>
+          </details>
+          <details>
             <summary>Posso ser sócio mesmo morando longe?</summary>
             <p>Sim! Todo apoio conta. Você recebe os avisos dos jogos, participa das votações online e acompanha os bastidores do clube.</p>
           </details>
@@ -1626,6 +1691,7 @@
           <li><a href="#chamine">Mascote Chaminé</a></li>
           <li><a href="#caminho">Fundo do Estádio</a></li>
           <li><a href="#planos">Planos de Sócio</a></li>
+          <li><a href="#loja">Loja de Camisas</a></li>
         </ul>
       </div>
 
@@ -1775,7 +1841,7 @@
       var copyBtn = document.getElementById("cp");
       if (copyBtn) {
         copyBtn.addEventListener("click", function () {
-          var key = "13695122447";
+          var key = "81995925511";
           var msg = document.getElementById("cpmsg");
           var pkEl = document.getElementById("pk");
 
@@ -1807,6 +1873,19 @@
           }
         });
       }
+
+      // Pedido de camisa via WhatsApp
+      document.querySelectorAll(".buy-shirt").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var sel = document.getElementById(btn.getAttribute("data-size"));
+          var tam = sel ? sel.value : "";
+          var msg = "Olá! Quero comprar a " + btn.getAttribute("data-shirt") + " do Sport Club Paulistano.\n" +
+            "Tamanho: " + tam + "\nValor: R$ 50 (retirada nos jogos, sem entrega)";
+          var out = document.getElementById("shopMsg");
+          if (out) { out.textContent = "Abrindo o WhatsApp com seu pedido..."; }
+          window.open("https://wa.me/5581997475173?text=" + encodeURIComponent(msg), "_blank", "noopener,noreferrer");
+        });
+      });
 
       // Validação e Envio do Formulário de Sócio via WhatsApp
       var form = document.getElementById("f");

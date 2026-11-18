@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sportclubpaulistano.pages.dev/sitemap.xml
+Sitemap: https://sportclubpaulistano.gabriel-bilugd01.workers.dev/sitemap.xml
