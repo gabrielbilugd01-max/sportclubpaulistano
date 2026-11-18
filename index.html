@@ -867,7 +867,7 @@
     }
 
     .progress-fill {
-      width: 38%;
+      width: 0%;
       height: 100%;
       background: linear-gradient(90deg, var(--ac), var(--y));
       border-radius: 99px;
@@ -1052,8 +1052,36 @@
     .shirt h3 { font-size: 1.45rem; }
     .shirt .price { margin: 0; font-size: 2.2rem; }
     .shirt select { width: 100%; }
+    .shirt label.check { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+    .shirt label.check input { width: 20px; height: 20px; padding: 0; accent-color: var(--ac); }
     .shop-note { margin-top: 22px; color: var(--mut); font-size: 0.95rem; }
     .shop-note strong { color: var(--fg); }
+
+
+    /* Carteirinha digital */
+    .card-box { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .card-box h4 { font-size: 1.3rem; margin-bottom: 12px; color: var(--fg); }
+    .scp-card {
+      background: linear-gradient(150deg, #1a5ccf 0%, #103f96 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 18px 20px;
+      aspect-ratio: 1.586 / 1;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: 10px solid var(--y);
+      box-shadow: var(--shadow);
+    }
+    .scp-top { display: flex; align-items: center; gap: 12px; }
+    .scp-top img { width: 52px; height: 52px; object-fit: contain; }
+    .scp-club { font-size: 1.15rem; letter-spacing: 0.03em; line-height: 1.1; }
+    .scp-sub { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--y); }
+    .scp-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--y); }
+    .scp-name { font-family: 'Anton', Impact, sans-serif; font-size: 1.5rem; letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; overflow-wrap: anywhere; }
+    .scp-bot { display: flex; justify-content: space-between; gap: 10px; font-size: 0.85rem; font-weight: 600; flex-wrap: wrap; }
+    .scp-note { color: var(--mut); font-size: 0.9rem; margin: 12px 0; }
 
     /* FAQ */
     .faq-list {
@@ -1263,7 +1291,7 @@
     <div class="wrap">
       <div class="topbar-badge">
         <span class="pulse-dot" aria-hidden="true"></span>
-        <span>Próximo jogo: 21 NOV · 9h no Campo Municipal (Entrada Gratuita)</span>
+        <span>Próximo jogo: 21 NOV · 9h no Campo do Vasco (Entrada Gratuita)</span>
       </div>
       <div class="topbar-actions">
         <button class="theme-btn" id="themeToggle" type="button" aria-label="Alternar tema claro ou escuro">
@@ -1338,7 +1366,7 @@
               <span>SHARKS SUB-15</span>
             </div>
             <div class="ms-meta">
-              <span>📍 Campo Municipal</span>
+              <span>📍 Campo do Vasco</span>
               <span>🎟️ Entrada 100% Gratuita</span>
             </div>
           </div>
@@ -1395,11 +1423,11 @@
                   <span class="crest-mini">SCP</span>
                   <span>Paulistano Sub-15 x Sharks Sub-15</span>
                 </div>
-                <span class="game-loc">📍 Campo Municipal</span>
+                <span class="game-loc">📍 Campo do Vasco</span>
               </div>
               <div class="game-foot">
                 <span class="tag">Entrada gratuita</span>
-                <button class="share-game" type="button" data-match="Paulistano Sub-15 x Sharks Sub-15 — 21 NOV, Sáb às 9h no Campo Municipal">Convidar torcida ↗</button>
+                <button class="share-game" type="button" data-match="Paulistano Sub-15 x Sharks Sub-15 — 21 NOV, Sáb às 9h no Campo do Vasco">Convidar torcida ↗</button>
               </div>
             </div>
           </article>
@@ -1415,11 +1443,11 @@
                   <span class="crest-mini">SCP</span>
                   <span>Paulistano x A confirmar</span>
                 </div>
-                <span class="game-loc">📍 Praça de Esportes</span>
+                <span class="game-loc">📍 Campo do Vasco</span>
               </div>
               <div class="game-foot">
                 <span class="tag">Entrada gratuita</span>
-                <button class="share-game" type="button" data-match="Paulistano x A confirmar — 28 NOV, Sáb às 15h na Praça de Esportes">Convidar torcida ↗</button>
+                <button class="share-game" type="button" data-match="Paulistano x A confirmar — 28 NOV, Sáb às 15h no Campo do Vasco">Convidar torcida ↗</button>
               </div>
             </div>
           </article>
@@ -1435,11 +1463,11 @@
                   <span class="crest-mini">SCP</span>
                   <span>Paulistano x A confirmar</span>
                 </div>
-                <span class="game-loc">📍 Parque Central</span>
+                <span class="game-loc">📍 Campo do Vasco</span>
               </div>
               <div class="game-foot">
                 <span class="tag">Entrada gratuita</span>
-                <button class="share-game" type="button" data-match="Paulistano x A confirmar — 05 DEZ, Sáb às 16h no Parque Central">Convidar torcida ↗</button>
+                <button class="share-game" type="button" data-match="Paulistano x A confirmar — 05 DEZ, Sáb às 16h no Campo do Vasco">Convidar torcida ↗</button>
               </div>
             </div>
           </article>
@@ -1499,16 +1527,14 @@
 
         <div class="fund-box" aria-label="Transparência de recursos do clube">
           <div class="fund-head">
-            <strong>Transparência · Meta Fase 1 (Aluguel de Campos &amp; Fundo Terreno)</strong>
-            <span class="tag">38% alcançado</span>
+            <strong>Transparência · Fundos do clube: meta de R$ 10.000</strong>
+            <span class="tag" id="fundTag">0% alcançado</span>
           </div>
-          <div class="progress-track" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da Meta Fase 1">
-            <div class="progress-fill"></div>
+          <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da meta de R$ 10.000 dos fundos do clube" id="fundBar">
+            <div class="progress-fill" id="fundFill"></div>
           </div>
           <div class="fund-legend">
-            <span>🔵 50% Fundo do Estádio</span>
-            <span>🟡 30% Campos e Arbitragem</span>
-            <span>⚪ 20% Uniformes e Bolas</span>
+            <span id="fundValor">R$ 0 arrecadados de R$ 10.000</span>
           </div>
         </div>
       </div>
@@ -1531,8 +1557,8 @@
             <div class="price">R$ 15<small>/mês</small></div>
             <ul>
               <li>Carteirinha digital oficial</li>
-              <li>Aviso antecipado de todos os jogos</li>
-              <li>Participação nos sorteios de matchday</li>
+              <li>Avisos dos jogos pelo WhatsApp do clube</li>
+              <li>Apoio direto ao time e ao fundo do estádio</li>
             </ul>
             <a class="btn o" href="#apoio" data-plan="Torcedor">Escolher Torcedor</a>
           </article>
@@ -1542,9 +1568,9 @@
             <h3>Sócio</h3>
             <div class="price">R$ 30<small>/mês</small></div>
             <ul>
-              <li>Camisa oficial no 1º ano de adesão</li>
+              <li>Todos os benefícios do plano Torcedor</li>
               <li>Direito a voto nas decisões do clube</li>
-              <li>Desconto exclusivo na loja oficial</li>
+              <li>Camisa por R$ 55 na loja (R$ 75 para quem não é sócio)</li>
             </ul>
             <a class="btn" href="#apoio" data-plan="Sócio">Escolher Sócio</a>
           </article>
@@ -1570,7 +1596,7 @@
           <div>
             <span class="sec-tag">Loja Oficial</span>
             <h2>Camisas do Paulistano</h2>
-            <p class="lead">Vista o clube. Cada camisa custa R$ 50 e ajuda a manter o time em campo.</p>
+            <p class="lead">Vista o clube. Cada camisa custa R$&nbsp;75, ou R$&nbsp;55 para quem é sócio. O valor ajuda a manter o time em campo.</p>
           </div>
         </div>
 
@@ -1580,14 +1606,17 @@
               <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 1 (branca) do Paulistano (imagem ilustrativa)"><use href="#cam1"/></svg>
             </div>
             <h3>Camisa 1 · Branca</h3>
-            <div class="price">R$ 50</div>
+            <div class="price" id="preco1">R$ 75</div>
+            <label class="check" for="s1">
+              <input type="checkbox" id="s1"> Sou sócio (R$ 55)
+            </label>
             <label for="t1">
               Tamanho
               <select id="t1">
                 <option>P</option><option selected>M</option><option>G</option><option>GG</option>
               </select>
             </label>
-            <button class="btn buy-shirt" type="button" data-shirt="Camisa 1 (branca)" data-size="t1">Quero esta camisa</button>
+            <button class="btn buy-shirt" type="button" data-shirt="Camisa 1 (branca)" data-size="t1" data-socio="s1" data-preco="preco1">Quero esta camisa</button>
           </article>
 
           <article class="shirt">
@@ -1595,14 +1624,17 @@
               <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 2 (azul) do Paulistano (imagem ilustrativa)"><use href="#cam2"/></svg>
             </div>
             <h3>Camisa 2 · Azul</h3>
-            <div class="price">R$ 50</div>
+            <div class="price" id="preco2">R$ 75</div>
+            <label class="check" for="s2">
+              <input type="checkbox" id="s2"> Sou sócio (R$ 55)
+            </label>
             <label for="t2">
               Tamanho
               <select id="t2">
                 <option>P</option><option selected>M</option><option>G</option><option>GG</option>
               </select>
             </label>
-            <button class="btn buy-shirt" type="button" data-shirt="Camisa 2 (azul)" data-size="t2">Quero esta camisa</button>
+            <button class="btn buy-shirt" type="button" data-shirt="Camisa 2 (azul)" data-size="t2" data-socio="s2" data-preco="preco2">Quero esta camisa</button>
           </article>
         </div>
 
@@ -1656,6 +1688,11 @@
                 <input id="c" name="cidade" type="text" placeholder="Ex.: São Paulo — Zona Oeste" required autocomplete="address-level2">
               </label>
 
+              <label for="w">
+                WhatsApp (com DDD)
+                <input id="w" name="whatsapp" type="tel" inputmode="tel" placeholder="Ex.: (81) 99999-9999" required autocomplete="tel">
+              </label>
+
               <label for="p">
                 Plano escolhido
                 <select id="p" name="plano">
@@ -1666,9 +1703,33 @@
               </label>
 
               <input type="text" id="site" name="site" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+              <p class="scp-note" style="margin:0">Usamos o seu número só para avisar dos jogos.</p>
               <button class="btn" type="submit" id="sendBtn">Enviar cadastro</button>
               <p class="status-msg" id="formMsg" role="status" aria-live="polite"></p>
             </form>
+
+            <div class="card-box" id="cardBox" hidden>
+              <h4>Sua carteirinha</h4>
+              <div class="scp-card" id="scpCard">
+                <div class="scp-top">
+                  <img data-crest alt="" width="52" height="52">
+                  <div>
+                    <div class="scp-club an">SPORT CLUB PAULISTANO</div>
+                    <div class="scp-sub">Carteirinha digital de sócio</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="scp-label">Sócio</div>
+                  <div class="scp-name" id="cardNome"></div>
+                </div>
+                <div class="scp-bot">
+                  <span id="cardPlano"></span>
+                  <span id="cardDesde"></span>
+                </div>
+              </div>
+              <p class="scp-note">Vale depois que o clube confirmar o seu Pix. Salve a imagem no celular para mostrar nos jogos.</p>
+              <button class="btn sm" type="button" id="saveCard">Salvar imagem</button>
+            </div>
           </div>
         </div>
       </div>
@@ -1699,7 +1760,7 @@
           </details>
           <details>
             <summary>Como compro uma camisa?</summary>
-            <p>Escolha o tamanho na loja e envie o pedido pelo WhatsApp. Cada camisa custa R$ 50, o pagamento é por Pix e não há entrega: você retira nos jogos.</p>
+            <p>Escolha o tamanho na loja e envie o pedido pelo WhatsApp. Cada camisa custa R$ 75, ou R$ 55 para sócios (marque "Sou sócio" na loja e o clube confere o seu cadastro). O pagamento é por Pix e não há entrega: você retira nos jogos.</p>
           </details>
           <details>
             <summary>Posso ser sócio mesmo morando longe?</summary>
@@ -1914,13 +1975,114 @@
         });
       }
 
+      // Meta de arrecadação. Para atualizar a barra, mude só o número ARRECADADO (em reais).
+      var META = 10000;
+      var ARRECADADO = 0;
+      (function () {
+        var pct = Math.max(0, Math.min(100, Math.round(ARRECADADO / META * 100)));
+        function brl(v) { return "R$ " + v.toLocaleString("pt-BR"); }
+        var tag = document.getElementById("fundTag");
+        var fill = document.getElementById("fundFill");
+        var bar = document.getElementById("fundBar");
+        var val = document.getElementById("fundValor");
+        if (tag) { tag.textContent = pct + "% alcançado"; }
+        if (fill) { fill.style.width = pct + "%"; }
+        if (bar) { bar.setAttribute("aria-valuenow", String(pct)); }
+        if (val) { val.textContent = brl(ARRECADADO) + " arrecadados de " + brl(META); }
+      })();
+
+      // Carteirinha digital (guardada neste aparelho)
+      var cardBox = document.getElementById("cardBox");
+      var CARD_KEY = "scp-carteirinha";
+      var cardAtual = null;
+
+      function mostrarCarteirinha(c) {
+        cardAtual = c;
+        document.getElementById("cardNome").textContent = c.nome;
+        document.getElementById("cardPlano").textContent = "Plano " + c.plano;
+        document.getElementById("cardDesde").textContent = "Desde " + c.desde;
+        if (cardBox) { cardBox.hidden = false; }
+      }
+
+      function carregarCarteirinha() {
+        try {
+          var raw = localStorage.getItem(CARD_KEY);
+          if (raw) {
+            var c = JSON.parse(raw);
+            if (c && c.nome && c.plano && c.desde) { mostrarCarteirinha(c); }
+          }
+        } catch (e) {}
+      }
+
+      function desenharCarteirinha(c) {
+        var cv = document.createElement("canvas");
+        cv.width = 1000; cv.height = 630;
+        var x = cv.getContext("2d");
+        var g = x.createLinearGradient(0, 0, 1000, 630);
+        g.addColorStop(0, "#1a5ccf"); g.addColorStop(1, "#103f96");
+        x.fillStyle = g; x.fillRect(0, 0, 1000, 630);
+        x.fillStyle = "#f6d70c"; x.fillRect(0, 580, 1000, 50);
+        var img = document.querySelector("img[data-crest]");
+        if (img && img.complete && img.naturalWidth) { x.drawImage(img, 50, 45, 130, 130); }
+        x.fillStyle = "#ffffff"; x.textBaseline = "alphabetic";
+        x.font = "52px Anton, Impact, sans-serif"; x.fillText("SPORT CLUB PAULISTANO", 205, 108);
+        x.fillStyle = "#f6d70c"; x.font = "700 24px Archivo, Arial, sans-serif"; x.fillText("CARTEIRINHA DIGITAL DE SÓCIO", 207, 150);
+        x.font = "700 26px Archivo, Arial, sans-serif"; x.fillText("SÓCIO", 52, 300);
+        x.fillStyle = "#ffffff"; x.font = "78px Anton, Impact, sans-serif";
+        var nome = c.nome.toUpperCase();
+        while (x.measureText(nome).width > 900 && nome.length > 3) { nome = nome.slice(0, -1); }
+        x.fillText(nome, 50, 385);
+        x.font = "700 32px Archivo, Arial, sans-serif";
+        x.fillText("Plano " + c.plano, 52, 480);
+        x.textAlign = "right"; x.fillText("Desde " + c.desde, 950, 480); x.textAlign = "left";
+        x.fillStyle = "#0f1b36"; x.font = "600 22px Archivo, Arial, sans-serif";
+        x.fillText("Vale depois da confirmação do Pix pelo clube", 52, 613);
+        return cv;
+      }
+
+      var saveBtn = document.getElementById("saveCard");
+      if (saveBtn) {
+        saveBtn.addEventListener("click", function () {
+          if (!cardAtual) { return; }
+          var fontes = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+          var espera = new Promise(function (ok) { setTimeout(ok, 1500); });
+          Promise.race([fontes, espera]).then(function () {
+            try {
+              var cv = desenharCarteirinha(cardAtual);
+              cv.toBlob(function (blob) {
+                if (!blob) { return; }
+                var a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                a.download = "carteirinha-paulistano.png";
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+              }, "image/png");
+            } catch (e) {}
+          });
+        });
+      }
+
+      carregarCarteirinha();
+
+      // Preço da camisa: R$ 75, ou R$ 55 para sócio
+      document.querySelectorAll(".shirt label.check input").forEach(function (box) {
+        box.addEventListener("change", function () {
+          var alvo = document.getElementById("preco" + box.id.slice(1));
+          if (alvo) { alvo.textContent = box.checked ? "R$ 55" : "R$ 75"; }
+        });
+      });
+
       // Pedido de camisa via WhatsApp
       document.querySelectorAll(".buy-shirt").forEach(function (btn) {
         btn.addEventListener("click", function () {
           var sel = document.getElementById(btn.getAttribute("data-size"));
           var tam = sel ? sel.value : "";
+          var chk = document.getElementById(btn.getAttribute("data-socio"));
+          var socio = !!(chk && chk.checked);
+          var valor = socio ? "R$ 55 (preço de sócio, por favor confira o meu cadastro)" : "R$ 75";
           var msg = "Olá! Quero comprar a " + btn.getAttribute("data-shirt") + " do Sport Club Paulistano.\n" +
-            "Tamanho: " + tam + "\nValor: R$ 50 (retirada nos jogos, sem entrega)";
+            "Tamanho: " + tam + "\nValor: " + valor + " (retirada nos jogos, sem entrega)";
           var out = document.getElementById("shopMsg");
           if (out) { out.textContent = "Abrindo o WhatsApp com seu pedido..."; }
           window.open("https://wa.me/5581997475173?text=" + encodeURIComponent(msg), "_blank", "noopener,noreferrer");
@@ -1938,6 +2100,9 @@
 
           var nome = nomeInput ? nomeInput.value.trim() : "";
           var cidade = cidadeInput ? cidadeInput.value.trim() : "";
+          var whatsInput = document.getElementById("w");
+          var whats = whatsInput ? whatsInput.value.trim() : "";
+          var whatsDigitos = whats.replace(/\D/g, "");
           var plano = planSelect ? planSelect.value : "Sócio";
 
           if (!nome || !cidade) {
@@ -1950,6 +2115,15 @@
             } else if (cidadeInput) {
               cidadeInput.focus();
             }
+            return;
+          }
+
+          if (whatsDigitos.length < 10 || whatsDigitos.length > 13) {
+            if (formMsg) {
+              formMsg.classList.add("error");
+              formMsg.textContent = "Confira o seu WhatsApp: escreva o número com DDD, por exemplo (81) 99999-9999.";
+            }
+            if (whatsInput) { whatsInput.focus(); }
             return;
           }
 
@@ -1970,6 +2144,7 @@
           dados.append("entry.1818818436", nome);
           dados.append("entry.1461335199", cidade);
           dados.append("entry.236522860", plano);
+          dados.append("entry.1369017111", whats);
 
           fetch("https://docs.google.com/forms/d/e/1FAIpQLSeuz4LJReqMUrJRIB0YY7S3O3VmAHapkrPhl7Mn-4MLBQtLYA/formResponse", {
             method: "POST",
@@ -1983,6 +2158,11 @@
             }
             form.reset();
             if (planSelect) { planSelect.value = plano; }
+            var agora = new Date();
+            var mes = ("0" + (agora.getMonth() + 1)).slice(-2);
+            var carteirinha = { nome: nome, plano: plano, desde: mes + "/" + agora.getFullYear() };
+            try { localStorage.setItem(CARD_KEY, JSON.stringify(carteirinha)); } catch (e) {}
+            mostrarCarteirinha(carteirinha);
           }).catch(function () {
             if (formMsg) {
               formMsg.classList.add("error");
