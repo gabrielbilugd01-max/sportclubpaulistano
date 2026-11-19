@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="google-site-verification" content="iQbvwB3rnBx7Sur71hA1_42IvsgDASwmGb1wNHp2F8U" />
+  <meta name="google-site-verification" content="6Vb2ESjZMXgtnKVnSXKUiSYj7zEuR9_gl12_EPL5mqM" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="Sport Club Paulistano — O campo é a cidade. Jogos abertos com entrada gratuita em campos públicos. Seja sócio e ajude a construir nossa casa própria.">
   <meta name="theme-color" content="#1a5ccf">
@@ -671,6 +671,8 @@
       border-color: var(--ac);
     }
 
+    .game[hidden], .match-spotlight[hidden] { display: none !important; }
+
     .game.hidden {
       display: none;
     }
@@ -970,9 +972,11 @@
 
     @media (max-width: 860px) {
       .support-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
     }
+
+    .support-grid > * { min-width: 0; }
 
     .panel-card {
       background: var(--card);
@@ -1250,7 +1254,7 @@
     <div class="wrap">
       <div class="topbar-badge">
         <span class="pulse-dot" aria-hidden="true"></span>
-        <span>Próximo jogo: 21 NOV · 9h no Campo do Vasco (Entrada Gratuita)</span>
+        <span id="topNext">Próximo jogo: 21 NOV · 9h no Campo do Vasco (Entrada Gratuita)</span>
       </div>
       <div class="topbar-actions">
         <button class="theme-btn" id="themeToggle" type="button" aria-label="Alternar tema claro ou escuro">
@@ -1317,12 +1321,12 @@
           <div class="match-spotlight" aria-label="Próxima partida em destaque">
             <div class="ms-top">
               <span>⚽ Match Center · Próxima Partida</span>
-              <span>Sáb, 21 NOV · 9h00</span>
+              <span id="msWhen">Sáb, 21 NOV · 9h00</span>
             </div>
             <div class="ms-teams">
-              <span>PAULISTANO SUB-15</span>
+              <span id="msHome">PAULISTANO SUB-15</span>
               <span class="ms-vs">VS</span>
-              <span>SHARKS SUB-15</span>
+              <span id="msAway">SHARKS SUB-15</span>
             </div>
             <div class="ms-meta">
               <span>📍 Campo do Vasco</span>
@@ -1371,7 +1375,7 @@
         </div>
 
         <div class="games" id="gamesGrid">
-          <article class="game" data-type="casa">
+          <article class="game" data-type="casa" data-date="2026-11-21T09:00" data-home="PAULISTANO SUB-15" data-away="SHARKS SUB-15" data-when="Sáb, 21 NOV · 9h00" data-short="21 NOV · 9h">
             <div class="d">
               <span class="an">21 NOV</span>
               <span class="comp">Sáb · 9h · Mandante</span>
@@ -1391,7 +1395,7 @@
             </div>
           </article>
 
-          <article class="game" data-type="casa">
+          <article class="game" data-type="casa" data-date="2026-11-28T15:00" data-home="PAULISTANO" data-away="A CONFIRMAR" data-when="Sáb, 28 NOV · 15h00" data-short="28 NOV · 15h">
             <div class="d">
               <span class="an">28 NOV</span>
               <span class="comp">Sáb · 15h · Mandante</span>
@@ -1411,7 +1415,7 @@
             </div>
           </article>
 
-          <article class="game" data-type="casa">
+          <article class="game" data-type="casa" data-date="2026-12-05T16:00" data-home="PAULISTANO" data-away="A CONFIRMAR" data-when="Sáb, 05 DEZ · 16h00" data-short="05 DEZ · 16h">
             <div class="d">
               <span class="an">05 DEZ</span>
               <span class="comp">Sáb · 16h · Mandante</span>
@@ -1730,6 +1734,10 @@
             <p>Escolha o tamanho na loja e envie o pedido pelo WhatsApp. Cada camisa custa R$ 100, ou R$ 80 para sócios (marque "Sou sócio" na loja e o clube confere o seu cadastro). O pagamento é por Pix e não há entrega: você retira nos jogos.</p>
           </details>
           <details>
+            <summary>Como meus dados são usados?</summary>
+            <p>No cadastro pedimos nome, cidade, plano e WhatsApp. Usamos esses dados só para registrar você como sócio e avisar dos jogos. Eles ficam numa planilha privada do clube, não são vendidos nem compartilhados. Para corrigir ou apagar seus dados, é só chamar o clube no WhatsApp.</p>
+          </details>
+          <details>
             <summary>Posso ser sócio mesmo morando longe?</summary>
             <p>Sim! Todo apoio conta. Você recebe os avisos dos jogos, participa das votações online e acompanha os bastidores do clube.</p>
           </details>
@@ -1769,6 +1777,8 @@
           <li><a href="#pix">Chave Pix Oficial</a></li>
           <li><a href="#socio">Cadastro de Sócio</a></li>
           <li><a href="#faq">Perguntas Frequentes</a></li>
+          <li><a href="https://wa.me/5581997475173?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Paulistano." target="_blank" rel="noopener noreferrer">Fale com o clube (WhatsApp)</a></li>
+          <li><a href="#faq" id="privLink">Privacidade dos dados</a></li>
         </ul>
       </div>
     </div>
@@ -1779,6 +1789,32 @@
     </div>
   </footer>
 
+  <script>
+    /* Calendário automático: esconde jogos passados e atualiza "Próximo jogo". */
+    (function () {
+      try {
+        var cards = [].slice.call(document.querySelectorAll(".game[data-date]"));
+        var now = Date.now(), next = null;
+        cards.forEach(function (c) {
+          var t = new Date(c.getAttribute("data-date")).getTime();
+          if (now > t + 3 * 3600 * 1000) { c.hidden = true; } else if (!next) { next = c; }
+        });
+        var top = document.getElementById("topNext");
+        if (next) {
+          if (top) top.textContent = "Próximo jogo: " + next.getAttribute("data-short") + " no Campo do Vasco (Entrada Gratuita)";
+          var w = document.getElementById("msWhen"), h = document.getElementById("msHome"), a = document.getElementById("msAway");
+          if (w) w.textContent = next.getAttribute("data-when");
+          if (h) h.textContent = next.getAttribute("data-home");
+          if (a) a.textContent = next.getAttribute("data-away");
+        } else {
+          if (top) top.textContent = "Novos jogos em breve. Acompanhe pelo WhatsApp do clube.";
+          var ms = document.querySelector(".match-spotlight"); if (ms) ms.hidden = true;
+          var g = document.getElementById("gamesGrid");
+          if (g) g.insertAdjacentHTML("beforeend", '<p style="color:var(--mut)">Novos jogos serão divulgados em breve.</p>');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <script>
     (function () {
       "use strict";
