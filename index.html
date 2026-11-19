@@ -1047,8 +1047,11 @@
     /* Loja de Camisas */
     .shop { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
     .shirt { background: var(--card); border: 2px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px; }
-    .shirt-art { background: var(--bg-alt); border-radius: 12px; padding: 10px; }
-    .shirt-art svg { width: 100%; max-width: 200px; margin: 0 auto; display: block; }
+    .shirt-art { background: var(--bg-alt); border-radius: 12px; padding: 8px; aspect-ratio: 5 / 6; display: flex; align-items: center; justify-content: center; }
+    .shirt-photo { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; display: block; }
+    .shirt-views { display: flex; gap: 8px; }
+    .view-btn { background: var(--card); color: var(--fg); border: 2px solid var(--line); border-radius: 99px; padding: 6px 16px; font: inherit; font-size: 0.86rem; font-weight: 600; cursor: pointer; }
+    .view-btn.active, .view-btn:hover { background: var(--ac); color: #fff; border-color: var(--ac); }
     .shirt h3 { font-size: 1.45rem; }
     .shirt .price { margin: 0; font-size: 2.2rem; }
     .shirt select { width: 100%; }
@@ -1238,50 +1241,6 @@
         <ellipse cx="136" cy="260" rx="20" ry="9" fill="#0f1b36"/>
         <circle cx="176" cy="262" r="15" fill="#fff" stroke="#0f1b36" stroke-width="3"/>
         <path d="M176 255l7 5-3 8h-8l-3-8z" fill="#0f1b36"/>
-      </symbol>
-      <symbol id="cam1" viewBox="0 0 200 200">
-        <defs><clipPath id="cam1c"><path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z"/></clipPath></defs>
-        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="#ffffff"/>
-        <g clip-path="url(#cam1c)" fill="#f6d70c">
-          <g stroke="none">
-            <path d="M8 38l26 52-8 4-26-52z"/><path d="M26 28l26 52-8 4-26-52z"/>
-            <path d="M192 38l-26 52 8 4 26-52z"/><path d="M174 28l-26 52 8 4 26-52z"/>
-            <path d="M6 48l28 56-10 5-28-56z"/><path d="M194 48l-28 56 10 5 28-56z"/>
-          </g>
-          <path d="M56 78h26L56 148z"/><path d="M144 78h-26l26 70z"/>
-          <path d="M56 154l20-22v14L56 170z"/><path d="M144 154l-20-22v14l20 24z"/>
-          <path d="M60 20L14 46" fill="none" stroke="#f6d70c" stroke-width="7"/>
-          <path d="M140 20l46 26" fill="none" stroke="#f6d70c" stroke-width="7"/>
-          <rect x="0" y="166" width="200" height="16"/>
-          <rect x="0" y="160" width="200" height="3" fill="#1a5ccf"/>
-          <path d="M92 150l8-10 8 10z" opacity="0"/>
-        </g>
-        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="none" stroke="#0f1b36" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M72 18q28 30 56 0l-6-6q-22 20-44 0z" fill="#1a5ccf" stroke="#0f1b36" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M80 18q20 22 40 0" fill="none" stroke="#f6d70c" stroke-width="3"/>
-        <image href="escudo.png" x="78" y="62" width="44" height="44" preserveAspectRatio="xMidYMid meet"/>
-      </symbol>
-      <symbol id="cam2" viewBox="0 0 200 200">
-        <defs><clipPath id="cam2c"><path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z"/></clipPath></defs>
-        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="#1a5ccf"/>
-        <g clip-path="url(#cam2c)" fill="#f6d70c">
-          <g stroke="none">
-            <path d="M8 38l26 52-8 4-26-52z"/><path d="M26 28l26 52-8 4-26-52z"/>
-            <path d="M192 38l-26 52 8 4 26-52z"/><path d="M174 28l-26 52 8 4 26-52z"/>
-            <path d="M6 48l28 56-10 5-28-56z"/><path d="M194 48l-28 56 10 5 28-56z"/>
-          </g>
-          <path d="M56 78h26L56 148z"/><path d="M144 78h-26l26 70z"/>
-          <path d="M56 154l20-22v14L56 170z"/><path d="M144 154l-20-22v14l20 24z"/>
-          <path d="M60 20L14 46" fill="none" stroke="#f6d70c" stroke-width="7"/>
-          <path d="M140 20l46 26" fill="none" stroke="#f6d70c" stroke-width="7"/>
-          <rect x="0" y="166" width="200" height="16"/>
-          <rect x="0" y="160" width="200" height="3" fill="#ffffff"/>
-          <path d="M92 150l8-10 8 10z" opacity="0"/>
-        </g>
-        <path d="M60 20l-46 26 20 40 22-10v104h88V76l22 10 20-40-46-26q-12 16-40 16T60 20z" fill="none" stroke="#0f1b36" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M72 18q28 30 56 0l-6-6q-22 20-44 0z" fill="#f6d70c" stroke="#0f1b36" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M80 18q20 22 40 0" fill="none" stroke="#f6d70c" stroke-width="3"/>
-        <image href="escudo.png" x="78" y="62" width="44" height="44" preserveAspectRatio="xMidYMid meet"/>
       </symbol>
     </defs>
   </svg>
@@ -1570,7 +1529,7 @@
             <ul>
               <li>Todos os benefícios do plano Torcedor</li>
               <li>Direito a voto nas decisões do clube</li>
-              <li>Camisa por R$ 55 na loja (R$ 75 para quem não é sócio)</li>
+              <li>Camisa por R$ 80 na loja (R$ 100 para quem não é sócio)</li>
             </ul>
             <a class="btn" href="#apoio" data-plan="Sócio">Escolher Sócio</a>
           </article>
@@ -1596,19 +1555,23 @@
           <div>
             <span class="sec-tag">Loja Oficial</span>
             <h2>Camisas do Paulistano</h2>
-            <p class="lead">Vista o clube. Cada camisa custa R$&nbsp;75, ou R$&nbsp;55 para quem é sócio. O valor ajuda a manter o time em campo.</p>
+            <p class="lead">Vista o clube. Cada camisa custa R$&nbsp;100, ou R$&nbsp;80 para quem é sócio. O valor ajuda a manter o time em campo.</p>
           </div>
         </div>
 
         <div class="shop">
           <article class="shirt">
             <div class="shirt-art">
-              <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 1 (branca) do Paulistano (imagem ilustrativa)"><use href="#cam1"/></svg>
+              <img class="shirt-photo" id="foto1" src="img/amarela-frente.webp" alt="Camisa amarela do Paulistano, frente" width="632" height="760" loading="lazy" data-frente="img/amarela-frente.webp" data-costas="img/amarela-costas.webp">
             </div>
-            <h3>Camisa 1 · Branca</h3>
-            <div class="price" id="preco1">R$ 75</div>
+            <div class="shirt-views" role="group" aria-label="Ver camisa amarela do paulistano">
+              <button class="view-btn active" type="button" data-foto="foto1" data-lado="frente" aria-pressed="true">Frente</button>
+              <button class="view-btn" type="button" data-foto="foto1" data-lado="costas" aria-pressed="false">Costas</button>
+            </div>
+            <h3>Camisa 1 · Amarela</h3>
+            <div class="price" id="preco1">R$ 100</div>
             <label class="check" for="s1">
-              <input type="checkbox" id="s1"> Sou sócio (R$ 55)
+              <input type="checkbox" id="s1"> Sou sócio (R$ 80)
             </label>
             <label for="t1">
               Tamanho
@@ -1616,17 +1579,21 @@
                 <option>P</option><option selected>M</option><option>G</option><option>GG</option>
               </select>
             </label>
-            <button class="btn buy-shirt" type="button" data-shirt="Camisa 1 (branca)" data-size="t1" data-socio="s1" data-preco="preco1">Quero esta camisa</button>
+            <button class="btn buy-shirt" type="button" data-shirt="Camisa 1 (amarela)" data-size="t1" data-socio="s1" data-preco="preco1">Quero esta camisa</button>
           </article>
 
           <article class="shirt">
             <div class="shirt-art">
-              <svg viewBox="0 0 200 200" role="img" aria-label="Camisa 2 (azul) do Paulistano (imagem ilustrativa)"><use href="#cam2"/></svg>
+              <img class="shirt-photo" id="foto2" src="img/azul-frente.webp" alt="Camisa azul do Paulistano, frente" width="640" height="739" loading="lazy" data-frente="img/azul-frente.webp" data-costas="img/azul-costas.webp">
+            </div>
+            <div class="shirt-views" role="group" aria-label="Ver camisa azul do paulistano">
+              <button class="view-btn active" type="button" data-foto="foto2" data-lado="frente" aria-pressed="true">Frente</button>
+              <button class="view-btn" type="button" data-foto="foto2" data-lado="costas" aria-pressed="false">Costas</button>
             </div>
             <h3>Camisa 2 · Azul</h3>
-            <div class="price" id="preco2">R$ 75</div>
+            <div class="price" id="preco2">R$ 100</div>
             <label class="check" for="s2">
-              <input type="checkbox" id="s2"> Sou sócio (R$ 55)
+              <input type="checkbox" id="s2"> Sou sócio (R$ 80)
             </label>
             <label for="t2">
               Tamanho
@@ -1638,7 +1605,7 @@
           </article>
         </div>
 
-        <p class="shop-note"><strong>Sem entrega.</strong> Você faz o pedido pelo WhatsApp, paga por Pix e retira a camisa nos jogos. Imagens ilustrativas.</p>
+        <p class="shop-note"><strong>Sem entrega.</strong> Você faz o pedido pelo WhatsApp, paga por Pix e retira a camisa nos jogos. Fotos das camisas reais.</p>
         <p class="status-msg" id="shopMsg" role="status" aria-live="polite"></p>
       </div>
     </section>
@@ -1760,7 +1727,7 @@
           </details>
           <details>
             <summary>Como compro uma camisa?</summary>
-            <p>Escolha o tamanho na loja e envie o pedido pelo WhatsApp. Cada camisa custa R$ 75, ou R$ 55 para sócios (marque "Sou sócio" na loja e o clube confere o seu cadastro). O pagamento é por Pix e não há entrega: você retira nos jogos.</p>
+            <p>Escolha o tamanho na loja e envie o pedido pelo WhatsApp. Cada camisa custa R$ 100, ou R$ 80 para sócios (marque "Sou sócio" na loja e o clube confere o seu cadastro). O pagamento é por Pix e não há entrega: você retira nos jogos.</p>
           </details>
           <details>
             <summary>Posso ser sócio mesmo morando longe?</summary>
@@ -2065,11 +2032,27 @@
 
       carregarCarteirinha();
 
-      // Preço da camisa: R$ 75, ou R$ 55 para sócio
+      // Frente / costas das camisas
+      document.querySelectorAll(".view-btn").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var img = document.getElementById(btn.getAttribute("data-foto"));
+          var lado = btn.getAttribute("data-lado");
+          if (!img) { return; }
+          img.src = img.getAttribute("data-" + lado);
+          img.alt = img.alt.replace(/(frente|costas)$/, lado);
+          document.querySelectorAll('.view-btn[data-foto="' + img.id + '"]').forEach(function (b) {
+            var ativo = b === btn;
+            b.classList.toggle("active", ativo);
+            b.setAttribute("aria-pressed", String(ativo));
+          });
+        });
+      });
+
+      // Preço da camisa: R$ 100, ou R$ 80 para sócio
       document.querySelectorAll(".shirt label.check input").forEach(function (box) {
         box.addEventListener("change", function () {
           var alvo = document.getElementById("preco" + box.id.slice(1));
-          if (alvo) { alvo.textContent = box.checked ? "R$ 55" : "R$ 75"; }
+          if (alvo) { alvo.textContent = box.checked ? "R$ 80" : "R$ 100"; }
         });
       });
 
@@ -2080,7 +2063,7 @@
           var tam = sel ? sel.value : "";
           var chk = document.getElementById(btn.getAttribute("data-socio"));
           var socio = !!(chk && chk.checked);
-          var valor = socio ? "R$ 55 (preço de sócio, por favor confira o meu cadastro)" : "R$ 75";
+          var valor = socio ? "R$ 80 (preço de sócio, por favor confira o meu cadastro)" : "R$ 100";
           var msg = "Olá! Quero comprar a " + btn.getAttribute("data-shirt") + " do Sport Club Paulistano.\n" +
             "Tamanho: " + tam + "\nValor: " + valor + " (retirada nos jogos, sem entrega)";
           var out = document.getElementById("shopMsg");
